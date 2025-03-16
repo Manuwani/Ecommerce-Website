@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="NewFile.css">
+</head>
+ 
+<body>
+ <div class="container">
+ <div class="left">
+ <div class="header">
+ <h2 class="animation a1"><b>MINIFINDER</b></h2> <p
+     class="animation a5"><img>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/490px-Magnifying_glass_icon.svg.png?20130526065603" alt=" " width="20px" height="20px"></p>
+ <h4 class="animation a2">" Your Efficient Word Search 
+Solution"</h4>
+ </div>
+ <div class="form">
+ <h2>Enter or Paste your text</h2>
+ <form action="Servlet" method="post">
+<input type="textarea" class="form-field animation 
+a3" placeholder="Enter/Paste text" length="50px" name="text">
+ 
+ <br>
+ <h2>Select an algorithm:</h2>
+ <select id="algorithm">
+ <option value="naive">Naive String Matching</option>
+ <option value="boyerMoore">Boyer-Moore Algorithm</option>
+ <option value="kmp">Knuth-Morris-Pratt (KMP) Algorithm</option>
+ <option value="rabinKarp">Rabin-Karp Algorithm</option>
+ <option value="ahoCorasick">Aho-Corasick Algorithm</option>
+ </select><br>
+ <h2>Enter a word/pattern you want to search:</h2>
+ 
+ 
+ <input type="textarea" class="form-field animation a4"
+placeholder="Write a word/pattern" name="pattern">
+ <input type="textarea" class="form-field animation a4"
+placeholder="Write content " name="content">
+ </form>
+ </div>
+ 
+ </div>
+ <div class="right"></div>
+ </div>
+ <div></div>
+ <script>
+ function searchWords() {
+ const searchText =
+document.getElementById('searchText').value.trim();
+ const algorithm = document.getElementById('algorithm').value;
+ // Perform word search using selected algorithm (simulated)
+ const matchedWords = simulateSearch(searchText, algorithm);
+ // Display results
+ displayResults(matchedWords);
+ }
+ function simulateSearch(text, algorithm) {
+return ['word1', 'word2', 'word3']; // Example matched words
+ }
+ function displayResults(words) {
+ const resultsContainer = document.getElementById('results');
+ resultsContainer.innerHTML = ''; // Clear previous results
+ if (words.length === 0) {
+ resultsContainer.textContent = 'No matching words found.';
+ } else {
+ const ul = document.createElement('ul');
+ words.forEach(word => {
+ const li = document.createElement('li');
+ li.textContent = word;
+ ul.appendChild(li);
+ });
+ resultsContainer.appendChild(ul);
+ }
+ }
+ </script>
+ 
+ 
+ 
+ <h1>hellow!!!!!!</h1>
+ 
+ <form action="Servelet2" method="post">
+ <label for="firstName">First Name:</label>
+ <input type="text" id="firstName" name="firstName" required><br><br>
+ 
+ <label for="lastName">Last Name:</label>
+ <input type="text" id="lastName" name="lastName" required><br><br>
+ 
+ <input type="submit" value="Submit">
+</body>
+</html>
